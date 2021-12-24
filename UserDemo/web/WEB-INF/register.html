@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+<form action="Register" method="post" style="padding-top:-700px;">
+    <label>
+        输入用户名:<input name="name" type="text"><br><br>
+    </label>
+    <label>
+        输入密码:<input name="pwd" type="password"><br><br>
+    </label>
+    <label>
+        选择性别:<input type="radio" name="sex" value="男" checked>男
+        <input type="radio" name="sex" value="女">女<br><br>
+    </label>
+    <label>
+        选择家乡:
+        <select name="home">
+            <option value="上海">上海</option>
+            <option value="北京" selected>北京</option>
+            <option value="纽约">纽约</option>
+        </select><br>
+    </label>
+    <label>
+        填写个人信息:<br>
+        <textarea name="info" rows="5" cols="30"></textarea><br>
+        <input type="reset" value="重置"><input type="submit" value="注册">
+    </label>
+</form>
+
+</body>
+</html>
