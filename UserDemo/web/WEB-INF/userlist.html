@@ -21,12 +21,36 @@
     <c:forEach var="U" items="${userAll}"  >
         <form action="UpdateUser" method="post">
             <tr>
-                <td><input type="text" value="${U.id}" name="id" ></td>
-                <td><input type="text" value="${U.name}" name="name"></td>
-                <td><input type="text" value="${U.sex}" name="sex"></td>
-                <td><input type="text" value="${U.pwd}" name="pwd"></td>
-                <td><input type="text" value="${U.home}" name="home"></td>
-                <td><input type="text" value="${U.info}" name="info"></td>
+                <td>
+                    <label>
+                        <input type="text" value="${U.id}" name="id" >
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="text" value="${U.name}" name="name">
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="text" value="${U.sex}" name="sex">
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="text" value="${U.pwd}" name="pwd">
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="text" value="${U.home}" name="home">
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="text" value="${U.info}" name="info">
+                    </label>
+                </td>
                 <td><a href="DeleteUser?id=${U.id}">删除</a>  <input type="submit" value="更新"/></td>
             </tr>
         </form>
