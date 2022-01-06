@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="jspm09921gsyhglxt">
+        <wb-resource deploy-path="/" source-path="/WebRoot"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="/jspm09921gsyhglxt"/>
+        <property name="java-output-path" value="/jspm09921gsyhglxt/WebRoot/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>
