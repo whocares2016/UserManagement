@@ -1,0 +1,382 @@
+
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+      xmlns:w="urn:schemas-microsoft-com:office:word"
+      xmlns="http://www.w3.org/TR/REC-html40">
+<!--<html>-->
+<h3>&nbsp;
+    创建外键索引语句:
+</h3>
+
+<pre style="padding: 20px; display: block; background: #d5d5d5;font-size: 12px">
+;
+ALTER TABLE yuangong ADD FOREIGN KEY (bumen) REFERENCES bumen(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE yuangong ADD FOREIGN KEY (zhiwei) REFERENCES zhiwei(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE gongzuoshijian ADD FOREIGN KEY (yuangong) REFERENCES yuangong(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE gongzuoshijian ADD FOREIGN KEY (bumen) REFERENCES bumen(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE gongzuoshijian ADD FOREIGN KEY (zhiwei) REFERENCES zhiwei(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE xinzixinxi ADD FOREIGN KEY (yuangong) REFERENCES yuangong(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE xinzixinxi ADD FOREIGN KEY (bumen) REFERENCES bumen(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ALTER TABLE xinzixinxi ADD FOREIGN KEY (zhiwei) REFERENCES zhiwei(id) ON UPDATE CASCADE ON DELETE CASCADE</pre>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="3" bgcolor="#DEDEDE">
+            【管理员】模块,表名：<span style="color: #990000">admins</span>
+        </td>
+    </tr>
+    <tr>
+        <td>字段名</td>
+        <td>字段类型</td>
+        <td>名称</td>
+    </tr>
+        <tr>
+        <td>id</td>
+        <td>int</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>username</td>
+        <td>varchar(50)</td>
+        <td>帐号 </td>
+    </tr>
+        <tr>
+        <td>pwd</td>
+        <td>varchar(50)</td>
+        <td>密码 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="3" bgcolor="#DEDEDE">
+            【部门】模块,表名：<span style="color: #990000">bumen</span>
+        </td>
+    </tr>
+    <tr>
+        <td>字段名</td>
+        <td>字段类型</td>
+        <td>名称</td>
+    </tr>
+        <tr>
+        <td>id</td>
+        <td>int</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>bumenmingcheng</td>
+        <td>varchar(255)</td>
+        <td>部门名称 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="3" bgcolor="#DEDEDE">
+            【职位】模块,表名：<span style="color: #990000">zhiwei</span>
+        </td>
+    </tr>
+    <tr>
+        <td>字段名</td>
+        <td>字段类型</td>
+        <td>名称</td>
+    </tr>
+        <tr>
+        <td>id</td>
+        <td>int</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>zhiweimingcheng</td>
+        <td>varchar(255)</td>
+        <td>职位名称 </td>
+    </tr>
+    
+                    </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="3" bgcolor="#DEDEDE">
+            【员工】模块,表名：<span style="color: #990000">yuangong</span>
+        </td>
+    </tr>
+    <tr>
+        <td>字段名</td>
+        <td>字段类型</td>
+        <td>名称</td>
+    </tr>
+        <tr>
+        <td>id</td>
+        <td>int</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>gonghao</td>
+        <td>varchar(50)</td>
+        <td>工号 </td>
+    </tr>
+        <tr>
+        <td>mima</td>
+        <td>varchar(50)</td>
+        <td>密码 </td>
+    </tr>
+        <tr>
+        <td>xingming</td>
+        <td>varchar(50)</td>
+        <td>姓名 </td>
+    </tr>
+        <tr>
+        <td>xingbie</td>
+        <td>varchar(10)</td>
+        <td>性别 </td>
+    </tr>
+        <tr>
+        <td>lianxifangshi</td>
+        <td>varchar(50)</td>
+        <td>联系方式 </td>
+    </tr>
+        <tr>
+        <td>bumen</td>
+        <td>int</td>
+        <td>部门 </td>
+    </tr>
+        <tr>
+        <td>zhiwei</td>
+        <td>int</td>
+        <td>职位 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="3">
+                设置索引，
+                字段：bumen ，
+                关联表【bumen】中的id 字段            </td>
+        </tr>
+                            <tr>
+            <td colspan="3">
+                设置索引，
+                字段：zhiwei ，
+                关联表【zhiwei】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="3" bgcolor="#DEDEDE">
+            【工作时间】模块,表名：<span style="color: #990000">gongzuoshijian</span>
+        </td>
+    </tr>
+    <tr>
+        <td>字段名</td>
+        <td>字段类型</td>
+        <td>名称</td>
+    </tr>
+        <tr>
+        <td>id</td>
+        <td>int</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>yuangong</td>
+        <td>int</td>
+        <td>员工ID </td>
+    </tr>
+        <tr>
+        <td>gonghao</td>
+        <td>varchar(64)</td>
+        <td>工号 </td>
+    </tr>
+        <tr>
+        <td>xingming</td>
+        <td>varchar(50)</td>
+        <td>姓名 </td>
+    </tr>
+        <tr>
+        <td>bumen</td>
+        <td>int</td>
+        <td>部门 </td>
+    </tr>
+        <tr>
+        <td>zhiwei</td>
+        <td>int</td>
+        <td>职位 </td>
+    </tr>
+        <tr>
+        <td>gongzuoriqi</td>
+        <td>varchar(25)</td>
+        <td>工作日期 </td>
+    </tr>
+        <tr>
+        <td>kaishishiduan</td>
+        <td>varchar(25)</td>
+        <td>开始时段 </td>
+    </tr>
+        <tr>
+        <td>jieshushiduan</td>
+        <td>varchar(25)</td>
+        <td>结束时段 </td>
+    </tr>
+        <tr>
+        <td>gongzuobeizhu</td>
+        <td>text</td>
+        <td>工作备注 </td>
+    </tr>
+        <tr>
+        <td>tianjiaren</td>
+        <td>varchar(64)</td>
+        <td>添加人 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="3">
+                设置索引，
+                字段：yuangong ，
+                关联表【yuangong】中的id 字段            </td>
+        </tr>
+                            <tr>
+            <td colspan="3">
+                设置索引，
+                字段：bumen ，
+                关联表【bumen】中的id 字段            </td>
+        </tr>
+                            <tr>
+            <td colspan="3">
+                设置索引，
+                字段：zhiwei ，
+                关联表【zhiwei】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+<table width=600 cellpadding="6" cellspacing="1" style="margin: 0 auto">
+    <tbody>
+    <tr>
+        <td colspan="3" bgcolor="#DEDEDE">
+            【薪资信息】模块,表名：<span style="color: #990000">xinzixinxi</span>
+        </td>
+    </tr>
+    <tr>
+        <td>字段名</td>
+        <td>字段类型</td>
+        <td>名称</td>
+    </tr>
+        <tr>
+        <td>id</td>
+        <td>int</td>
+        <td> (主键)</td>
+    </tr>
+        <tr>
+        <td>xinzibianhao</td>
+        <td>varchar(50)</td>
+        <td>薪资编号 </td>
+    </tr>
+        <tr>
+        <td>yuefen</td>
+        <td>varchar(25)</td>
+        <td>月份 </td>
+    </tr>
+        <tr>
+        <td>yuangong</td>
+        <td>int</td>
+        <td>员工ID </td>
+    </tr>
+        <tr>
+        <td>gonghao</td>
+        <td>varchar(64)</td>
+        <td>工号 </td>
+    </tr>
+        <tr>
+        <td>xingming</td>
+        <td>varchar(50)</td>
+        <td>姓名 </td>
+    </tr>
+        <tr>
+        <td>bumen</td>
+        <td>int</td>
+        <td>部门 </td>
+    </tr>
+        <tr>
+        <td>zhiwei</td>
+        <td>int</td>
+        <td>职位 </td>
+    </tr>
+        <tr>
+        <td>jibengongzi</td>
+        <td>decimal(10, 2)</td>
+        <td>基本工资 </td>
+    </tr>
+        <tr>
+        <td>jiabangongzi</td>
+        <td>decimal(10, 2)</td>
+        <td>加班工资 </td>
+    </tr>
+        <tr>
+        <td>quanqinjiang</td>
+        <td>decimal(10, 2)</td>
+        <td>全勤奖 </td>
+    </tr>
+        <tr>
+        <td>youxiuyuangong</td>
+        <td>decimal(10, 2)</td>
+        <td>优秀员工 </td>
+    </tr>
+        <tr>
+        <td>shebao</td>
+        <td>decimal(10, 2)</td>
+        <td>社保 </td>
+    </tr>
+        <tr>
+        <td>gongjijin</td>
+        <td>decimal(10, 2)</td>
+        <td>公积金 </td>
+    </tr>
+        <tr>
+        <td>gerensuodeshui</td>
+        <td>decimal(10, 2)</td>
+        <td>个人所得税 </td>
+    </tr>
+        <tr>
+        <td>yingfaxinzi</td>
+        <td>decimal(10, 2)</td>
+        <td>应发薪资 </td>
+    </tr>
+        <tr>
+        <td>shifaxinzi</td>
+        <td>decimal(10, 2)</td>
+        <td>实发薪资 </td>
+    </tr>
+    
+                                <tr>
+            <td colspan="3">
+                设置索引，
+                字段：yuangong ，
+                关联表【yuangong】中的id 字段            </td>
+        </tr>
+                            <tr>
+            <td colspan="3">
+                设置索引，
+                字段：bumen ，
+                关联表【bumen】中的id 字段            </td>
+        </tr>
+                            <tr>
+            <td colspan="3">
+                设置索引，
+                字段：zhiwei ，
+                关联表【zhiwei】中的id 字段            </td>
+        </tr>
+                </tbody>
+</table>
+<p>&nbsp;</p>
+
+
+</html>

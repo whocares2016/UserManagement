@@ -25,15 +25,15 @@
                 </tr>
                 <tr align="middle" bgcolor="#ffffff">
                     <td width="10%" align="left">系统作者：</td>
-                    <td width="41%" align="left"><font class="t4">xxxxxx</font></td>
+                    <td width="41%" align="left"><font class="t4">李慧</font></td>
                 </tr>
                 <tr align="middle" bgcolor="#ffffff">
                     <td align="left">指导老师：</td>
-                    <td align="left">xxxxxxx</td>
+                    <td align="left">伍胜</td>
                 </tr>
                 <tr align="middle" bgcolor="#ffffff">
                     <td align="left">联系方式：</td>
-                    <td align="left"><font class="t41">xxxxxxxxxxxxxxx</font></td>
+                    <td align="left"><font class="t41">222020321072044</font></td>
                 </tr>
             </tbody>
         </table>

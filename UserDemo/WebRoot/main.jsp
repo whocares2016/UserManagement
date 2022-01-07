@@ -25,8 +25,6 @@
         <!-- <link rel="stylesheet" href="./css/theme5.css"> -->
         <script src="./lib/layui/layui.js" charset="utf-8"></script>
         <script type="text/javascript" src="./js/xadmin.js"></script>
-        <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
-        <!--[if lt IE 9]>
             <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
             <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
@@ -41,18 +39,6 @@
             <div class="logo">
                 <a href="./">公司用户管理系统</a>
             </div>
-            <!--
-    <div class="left_open">
-        <a><i title="展开左侧栏" class="iconfont">&#xe699;</i></a>
-    </div>
-    -->
-            <!--
-    <ul class="layui-nav left fast-add" lay-filter="">
-        <li class="layui-nav-item">
-            <a href="javascript:;">+新增</a>
-        </li>
-    </ul>
-    -->
 
             <ul class="layui-nav right" lay-filter="">
                 <li class="layui-nav-item">
