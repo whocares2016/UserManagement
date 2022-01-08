@@ -35,6 +35,10 @@
                     <td align="left">联系方式：</td>
                     <td align="left"><font class="t41">222020321072044</font></td>
                 </tr>
+                <tr align="middle" bgcolor="#ffffff">
+                    <td align="left"><a href="count.jsp">在线人数统计</a></td>
+                    <td align="left"><font class="t41">1</font></td>
+                </tr>
             </tbody>
         </table>
         <p>&nbsp;</p>

@@ -40,6 +40,9 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
+    <listener>
+        <listener-class>listener.CountLineListener</listener-class>
+    </listener>
 
 </web-app>
 

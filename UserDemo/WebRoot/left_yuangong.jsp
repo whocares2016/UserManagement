@@ -52,5 +52,11 @@
                 <cite>修改密码</cite>
             </a>
         </li>
+        <li>
+            <a onclick="xadmin.add_tab('上传证件照','upload_re.jsp')">
+                <i class="iconfont">&#xe6a7;</i>
+                <cite>上传证件照</cite>
+            </a>
+        </li>
     </ul>
 </li>
