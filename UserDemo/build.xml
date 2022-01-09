@@ -1,0 +1,81 @@
+<?xml version="1.0"  encoding="UTF-8" ?>
+<project name="UserDemoService" default="Build" basedir=".">
+    <!-- 设置属性，方便下面使用 -->
+    <property name="lib.dir" location="WebRoot\lib" />
+    <property name="lib.dir" location="WebRoot\WEB-INF\lib" />
+    <property name="src" value="src"/>
+    <property name="build.allclass" value="ant/allclass"/>
+    <property name="build.lib" value="ant/jar"/>
+    <property name="build.webapp" value="ant/webapp"/>
+    <property name="build.jar" value="ant/jar/test.jar"/>
+
+    <!-- 指定项目依赖的第三方jar包-->
+    <path id="classpath">
+        <fileset dir="${lib.dir}">
+            <include name="**/*.jar" />
+        </fileset>
+    </path>
+
+    <!-- 创建编译过程中存放jar包及class文件的目录 -->
+    <target name="create-path">
+        <mkdir dir="${build.allclass}"/>
+        <mkdir dir="${build.lib}"/>
+        <mkdir dir="${build.webapp}"/>
+        <mkdir dir="${build.webapp}/WEB-INF/classes" />
+    </target>
+
+    <!-- 编译 -->
+    <!-- fork="true" executable="E:\jdk\jdk\bin\javac"  指定使用哪个jdk版本编译  也可以用target="1.7"来指定jdk版本，只是这个方法没有前面一个灵活-->
+    <target name="create-class">
+        <javac  destdir="${build.allclass}" includeantruntime="on" fork="true" executable="C:\Program Files\Java\jdk1.8.0_201\bin\javac">
+            <src path="${src}" />
+            <compilerarg value="-Xlint:unchecked"/>
+            <compilerarg value="-Xlint:deprecation"/>
+            <compilerarg line="-encoding UTF-8 "/>
+            <classpath refid="classpath" />
+        </javac>
+
+        <!-- 把WebContent下的所有文件（除了.svn,**/**.svn文件）复制到ant/webapp -->
+        <copy todir="${build.webapp}">
+            <fileset dir="." includes="**" excludes=".svn,**/**.svn">
+            </fileset>
+        </copy>
+
+        <!-- 把resources下的所有文件（除了.svn,**/**.svn文件）复制到ant/allclass -->
+        <!--<copy todir="${build.allclass}">
+            ${count}
+            </fileset>
+        </copy>-->
+
+        <!-- 把allclass下的所有文件复制到ant/webapp/WEB-INF/classes下 -->
+        <copy todir="${build.webapp}/WEB-INF/classes">
+            <fileset dir="${build.allclass}"/>
+        </copy>
+    </target>
+
+    <!-- 把allclass下的所有文件打包成jar包 -->
+    <target name="create-jar">
+        <jar destfile="${build.jar}" basedir="${build.allclass}">
+            <manifest>
+                <attribute name="Main-Class" value="test"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <!-- 把ant/webapp下的所有文件打包成cdaOtherService.war包 -->
+    <target name="makeWar" depends="create-path,create-class,create-jar">
+        <war warfile="ant/cdaOtherService.war">
+            <fileset dir="${build.webapp}" />
+        </war>
+    </target>
+
+    <!-- 删除生成的class文件 -->
+    <target name="clean" depends="makeWar">
+        <delete dir="${build.allclass}"/>
+        <delete dir="${build.webapp}"/>
+    </target>
+
+    <target name="Build" depends="makeWar,clean">
+        <echo message="Ant is building the project.create ok" />
+    </target>
+</project>
